@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Input } from './InputComp.jsx'
+import { FaPlusCircle } from "react-icons/fa";
 
 const TodosForm = ({ addTodo }) => {
     const [categories, setCategories] = useState([
@@ -41,7 +42,7 @@ const TodosForm = ({ addTodo }) => {
                 <option key={index} value={value}>{name}</option>
             ))}
         </select>
-        <button type='submit'>Criar tarefa</button>
+        <button type='submit'>Criar tarefa <FaPlusCircle /></button>
     </form>
   </div>
 }
