@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import './App.css'
+import Todos from './components/Todos.jsx'
+import TodosForm from './components/TodosForm.jsx'
 
 function App() {
   const [todos, setTodos] = useState([
@@ -11,20 +13,22 @@ function App() {
     }
   ])
 
+  const addTodo = (text, category) => {
+    const newTodos = [...todos, {
+      id: Date.now(),
+      text,
+      category,
+      isCompleted: false
+    }];
+    setTodos(newTodos);
+  }
+
   return <div className='app'>
-    <h1>Lista de Tarefas</h1>
+    <h1>Lista de Tarefas com React</h1>
+    <TodosForm addTodo={addTodo} />
     <div className='todo-list'>
       {todos.map((todo) => (
-        <div className='todo'>
-          <div className='content'>
-            <p>{todo.text}</p>
-            <p className='category'>{todo.category}</p>
-          </div>
-          <div>
-            <button>Completar</button>
-            <button>X</button>
-          </div>
-        </div>
+        <Todos key={todo.id} todo={todo} />
       ))}
     </div>
   </div>
