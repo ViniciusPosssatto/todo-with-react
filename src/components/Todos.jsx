@@ -1,14 +1,14 @@
 import { FaTrash, FaRegCheckCircle } from 'react-icons/fa';
-const todos = ({todo}) => {
+const todos = ({todo, removeTodo, completeTodo }) => {
   return (
-    <div className='todo'>
+    <div className='todo' style={{textDecoration: todo.isCompleted ? "line-through" : ""}}>
           <div className='content'>
             <p>{todo.text}</p>
             <p className='category'>{todo.category}</p>
           </div>
           <div>
-            <button className='complete'><FaRegCheckCircle width={200} /></button>
-            <button className='remove'><FaTrash /></button>
+            <button className='complete' onClick={() => completeTodo(todo.id)}><FaRegCheckCircle width={200} /></button>
+            <button className='remove' onClick={() => removeTodo(todo.id)}><FaTrash /></button>
           </div>
         </div>
   )
