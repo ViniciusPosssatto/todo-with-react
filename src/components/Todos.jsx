@@ -4,7 +4,7 @@ const todos = ({todo, removeTodo, completeTodo }) => {
     <div className='todo' style={{textDecoration: todo.isCompleted ? "line-through" : ""}}>
           <div className='content'>
             <p>{todo.text}</p>
-            <p className='category'>{todo.category}</p>
+            <p className='category'>({todo.category})</p>
           </div>
           <div>
             <button className='complete' onClick={() => completeTodo(todo.id)}><FaRegCheckCircle width={200} /></button>

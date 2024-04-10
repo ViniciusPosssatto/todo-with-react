@@ -42,7 +42,7 @@ const TodosForm = ({ addTodo }) => {
                 <option key={index} value={value}>{name}</option>
             ))}
         </select>
-        <button type='submit'>Criar tarefa <FaPlusCircle /></button>
+        <button type='submit' className='btn-submit'>Criar tarefa <FaPlusCircle /></button>
     </form>
   </div>
 }
