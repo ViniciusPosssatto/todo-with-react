@@ -37,6 +37,14 @@ button {
     border-radius: 3px;
     opacity: 0.8;
     transition: 0.3s;
+    margin-left: 20px;
+}
+
+.btn-submit {
+    width: 200px;
+}
+.input-search {
+    width: 200px;
 }
 
 button:hover {
@@ -75,4 +83,8 @@ input, select {
     justify-content: space-between;
     align-items: center;
     max-width: 800px;
+}
+
+.search {
+    width: 1000px;
 }
